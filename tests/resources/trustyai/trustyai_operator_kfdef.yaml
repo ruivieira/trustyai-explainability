@@ -10,9 +10,9 @@ spec:
           path: config
         parameters:
           - name: trustyaiServiceImage
-            value: serviceImagePlaceholder
+            value: quay.io/trustyai/trustyai-service:latest
           - name: trustyaiOperatorImage
-            value: operatorImagePlaceholder
+            value: quay.io/ruimvieira/trustyai-service-operator:issue-135-oauth-proxy-testing
       name: trustyai-service-operator
   repos:
     - name: manifests
