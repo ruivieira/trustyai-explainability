@@ -16,5 +16,5 @@ spec:
       name: trustyai-service-operator
   repos:
     - name: manifests
-      uri: https://github.com/trustyai-explainability/trustyai-service-operator/tarball/main
+      uri: https://github.com/ruivieira/trustyai-service-operator/tarball/issue-135-oauth-proxy-testing
   version: v1.0.0
