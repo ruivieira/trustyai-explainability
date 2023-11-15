@@ -22,6 +22,7 @@ REQUESTS_CREATED=false
 FAILURE=false
 FAILURE_HANDLING='FAILURE=true && echo -e "\033[0;31mERROR\033[0m"'
 
+TOKEN=$(oc whoami -t)
 
 os::test::junit::declare_suite_start "$MY_SCRIPT"
 
@@ -109,7 +110,7 @@ function schedule_and_check_request(){
     METRIC_UPPERCASE=$(echo ${METRIC_NAME} | tr '[:lower:]' '[:upper:]')
     for MODEL in $MODEL_ALPHA $MODEL_BETA
     do
-      curl -sk --location $TRUSTY_ROUTE/metrics/$METRIC_NAME/request \
+      curl -sk -H "Authorization: Bearer ${TOKEN}" --location $TRUSTY_ROUTE/metrics/$METRIC_NAME/request \
         --header 'Content-Type: application/json' \
         --data "{
                   \"modelId\": \"$MODEL\",
@@ -187,10 +188,10 @@ function teardown_trustyai_test() {
   if [ $REQUESTS_CREATED = true ]; then
     for METRIC_NAME in "spd" "dir"
     do
-      for REQUEST in $(curl -sk $TRUSTY_ROUTE/metrics/$METRIC_NAME/requests | jq -r '.requests [].id')
+      for REQUEST in $(curl -sk -H "Authorization: Bearer ${TOKEN}" $TRUSTY_ROUTE/metrics/$METRIC_NAME/requests | jq -r '.requests [].id')
       do
         echo -n $REQUEST": "
-        curl -k -X DELETE --location $TRUSTY_ROUTE/metrics/$METRIC_NAME/request \
+        curl -k -H "Authorization: Bearer ${TOKEN}" -X DELETE --location $TRUSTY_ROUTE/metrics/$METRIC_NAME/request \
             -H 'Content-Type: application/json' \
             -d "{
                   \"requestId\": \"$REQUEST\"
