@@ -53,6 +53,65 @@ abstract public class CloudEventConsumerBaseTest {
         clearStorage();
     }
 
+    private static final String input = "{\n" +
+                "    \"inputs\": [\n" +
+                "        {\n" +
+                "            \"name\": \"inputs\",\n" +
+                "            \"shape\": [\n" +
+                "                5,\n" +
+                "                2\n" +
+                "            ],\n" +
+                "            \"datatype\": \"FP64\",\n" +
+                "            \"data\": [\n" +
+                "                [\n" +
+                "                    8.3252,\n" +
+                "                    41.0\n" +
+                "                ],\n" +
+                "                [\n" +
+                "                    8.3014,\n" +
+                "                    21.0\n" +
+                "                ],\n" +
+                "                [\n" +
+                "                    7.2574,\n" +
+                "                    52.0\n" +
+                "                ],\n" +
+                "                [\n" +
+                "                    5.6431,\n" +
+                "                    52.0\n" +
+                "                ],\n" +
+                "                [\n" +
+                "                    3.8462,\n" +
+                "                    52.0\n" +
+                "                ]\n" +
+                "            ]\n" +
+                "        }\n" +
+                "    ]\n" +
+                "}\n";
+
+
+    private static final String output = "{\n" +
+                "    \"model_name\": \"explainer-test-a\",\n" +
+                "    \"id\": \"29816015-fc5b-4226-98dc-344c190c03bf\",\n" +
+                "    \"parameters\": {},\n" +
+                "    \"outputs\": [\n" +
+                "        {\n" +
+                "            \"name\": \"predict\",\n" +
+                "            \"shape\": [\n" +
+                "                5,\n" +
+                "                1\n" +
+                "            ],\n" +
+                "            \"datatype\": \"FP64\",\n" +
+                "            \"data\": [\n" +
+                "                87.53267207528769,\n" +
+                "                85.33306501426134,\n" +
+                "                77.90240870728456,\n" +
+                "                61.71289055261055,\n" +
+                "                43.69211054137737\n" +
+                "            ]\n" +
+                "        }\n" +
+                "    ]\n" +
+                "}";
+
     private CloudEvent<byte[]> generateMockInput(String id) {
         final String payload = "{\"instances\":[[" + Math.random() + ", " + Math.random() + ", " + Math.random() + ", " + Math.random() + "]]}";
         return MockKServeInputPayload.create(id, payload.getBytes(StandardCharsets.UTF_8), MODEL_NAME);
