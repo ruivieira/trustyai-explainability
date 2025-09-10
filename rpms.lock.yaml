@@ -2,20 +2,20 @@
 lockfileVersion: 1
 lockfileVendor: redhat
 arches:
-  - arch: x86_64
-    packages:
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/os/Packages/u/unzip-6.0-58.el9_5.x86_64.rpm
-        repoid: ubi-9-for-x86_64-baseos-rpms
-        size: 190785
-        checksum: sha256:009698f3b4432b9df219fd2f894234aad1cee8c4e4e61384b4e293ef8e28e9c2
-        name: unzip
-        evr: 6.0-58.el9_5
-        sourcerpm: unzip-6.0-58.el9_5.src.rpm
-    source:
-      - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/source/SRPMS/Packages/u/unzip-6.0-58.el9_5.src.rpm
-        repoid: ubi-9-for-x86_64-baseos-source-rpms
-        size: 1436757
-        checksum: sha256:49de0234c5e8f588c94b435c35225bcccd4cc94bb19cac94110d9aa0c5060f69
-        name: unzip
-        evr: 6.0-58.el9_5
-    module_metadata: []
+- arch: x86_64
+  packages:
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/os/Packages/u/unzip-6.0-58.el9_5.x86_64.rpm
+    repoid: ubi-9-for-x86_64-baseos-rpms
+    size: 190785
+    checksum: sha256:009698f3b4432b9df219fd2f894234aad1cee8c4e4e61384b4e293ef8e28e9c2
+    name: unzip
+    evr: 6.0-58.el9_5
+    sourcerpm: unzip-6.0-58.el9_5.src.rpm
+  source:
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/source/SRPMS/Packages/u/unzip-6.0-58.el9_5.src.rpm
+    repoid: ubi-9-for-x86_64-baseos-source-rpms
+    size: 1436757
+    checksum: sha256:49de0234c5e8f588c94b435c35225bcccd4cc94bb19cac94110d9aa0c5060f69
+    name: unzip
+    evr: 6.0-58.el9_5
+  module_metadata: []
