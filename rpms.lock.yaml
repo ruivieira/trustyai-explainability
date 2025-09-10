@@ -37,7 +37,7 @@ arches:
     size: 200764
     checksum: sha256:f08307816a4aae5924ab3775c14a41124db9f8750d83bee2ecb93a29a3b5130a
     name: unzip
-    evr: 6.0-58.el9_5
+    evr: 6.0-48.el8_10
     sourcerpm: unzip-6.0-48.el8_10.src.rpm
   source: []
   module_metadata: []
