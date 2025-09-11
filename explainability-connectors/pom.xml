@@ -32,7 +32,7 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-handler</artifactId>
-                <version>4.1.124.Final</version>
+                <version>${version.io.netty}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
